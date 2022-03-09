@@ -60,8 +60,7 @@ namespace TextEditor.Controller
         //cerrar el programa 
         public void cerra(String datos) 
         {
-            guardar(datos);
             Environment.Exit(0);
-        }
+        }       
     }
 }

@@ -34,21 +34,73 @@ namespace TextEditor
                 }
             }
         }
-
         //para guardar un archivo
         private void Guardar_Click(object sender, EventArgs e)
         {
             c1.guardar(richTextBox1.Text);
         }
-
+        //para un nuevo archivo 
         private void nuevo_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = c1.nuevo();
         }
-
+        //para cerrar
         private void Cerrar_Click(object sender, EventArgs e)
         {
             c1.cerra(richTextBox1.Text);
+        }
+        //para retroceder
+        private void Atras_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Undo();
+        }
+        //adelantar 
+        private void Adelantar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Redo();
+        }
+        //copiar
+        private void Copiar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+        //cortar
+        private void Cortar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+        //pegar
+        private void Pegar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
+        }
+        //seleccionar todo
+        private void seleccionarTodo_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
+        //eliminar todo
+        private void eliminarTodo_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+        //color
+        private void color_Click(object sender, EventArgs e)
+        {
+            var cl = colorDialog1.ShowDialog();
+            if (cl == DialogResult.OK) 
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
+        }
+        //formato 
+        private void formato_Click(object sender, EventArgs e)
+        {
+            var fm = fontDialog1.ShowDialog();
+            if (fm == DialogResult.OK) 
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
         }
     }
 }
