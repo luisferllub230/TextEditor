@@ -35,6 +35,20 @@ namespace TextEditor
             }
         }
 
-        //
+        //para guardar un archivo
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            c1.guardar(richTextBox1.Text);
+        }
+
+        private void nuevo_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = c1.nuevo();
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            c1.cerra(richTextBox1.Text);
+        }
     }
 }

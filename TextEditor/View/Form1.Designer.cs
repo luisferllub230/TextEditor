@@ -44,6 +44,7 @@
             this.color = new System.Windows.Forms.ToolStripMenuItem();
             this.formato = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.nuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             this.Archivos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Abrir,
             this.Guardar,
+            this.nuevo,
             this.Cerrar});
             this.Archivos.Name = "Archivos";
             this.Archivos.Size = new System.Drawing.Size(65, 20);
@@ -82,12 +84,14 @@
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(180, 22);
             this.Guardar.Text = "Guardar";
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // Cerrar
             // 
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(180, 22);
             this.Cerrar.Text = "Cerrar";
+            this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
             // Editar
             // 
@@ -167,6 +171,13 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
+            // nuevo
+            // 
+            this.nuevo.Name = "nuevo";
+            this.nuevo.Size = new System.Drawing.Size(180, 22);
+            this.nuevo.Text = "nuevo";
+            this.nuevo.Click += new System.EventHandler(this.nuevo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem color;
         private System.Windows.Forms.ToolStripMenuItem formato;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem nuevo;
     }
 }
 
