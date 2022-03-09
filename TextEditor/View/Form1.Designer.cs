@@ -32,6 +32,7 @@
             this.Archivos = new System.Windows.Forms.ToolStripMenuItem();
             this.Abrir = new System.Windows.Forms.ToolStripMenuItem();
             this.Guardar = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.Editar = new System.Windows.Forms.ToolStripMenuItem();
             this.Atras = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,8 @@
             this.color = new System.Windows.Forms.ToolStripMenuItem();
             this.formato = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.nuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@
             // Abrir
             // 
             this.Abrir.Name = "Abrir";
+            this.Abrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.Abrir.Size = new System.Drawing.Size(180, 22);
             this.Abrir.Text = "Abrir";
             this.Abrir.Click += new System.EventHandler(this.Abrir_Click);
@@ -82,13 +85,23 @@
             // Guardar
             // 
             this.Guardar.Name = "Guardar";
+            this.Guardar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.Guardar.Size = new System.Drawing.Size(180, 22);
             this.Guardar.Text = "Guardar";
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
+            // nuevo
+            // 
+            this.nuevo.Name = "nuevo";
+            this.nuevo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nuevo.Size = new System.Drawing.Size(180, 22);
+            this.nuevo.Text = "nuevo";
+            this.nuevo.Click += new System.EventHandler(this.nuevo_Click);
+            // 
             // Cerrar
             // 
             this.Cerrar.Name = "Cerrar";
+            this.Cerrar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.Cerrar.Size = new System.Drawing.Size(180, 22);
             this.Cerrar.Text = "Cerrar";
             this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
@@ -110,56 +123,72 @@
             // Atras
             // 
             this.Atras.Name = "Atras";
-            this.Atras.Size = new System.Drawing.Size(163, 22);
+            this.Atras.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.Atras.Size = new System.Drawing.Size(203, 22);
             this.Atras.Text = "Atras";
+            this.Atras.Click += new System.EventHandler(this.Atras_Click);
             // 
             // Adelantar
             // 
             this.Adelantar.Name = "Adelantar";
-            this.Adelantar.Size = new System.Drawing.Size(163, 22);
+            this.Adelantar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.Adelantar.Size = new System.Drawing.Size(203, 22);
             this.Adelantar.Text = "Adelantar ";
+            this.Adelantar.Click += new System.EventHandler(this.Adelantar_Click);
             // 
             // Copiar
             // 
             this.Copiar.Name = "Copiar";
-            this.Copiar.Size = new System.Drawing.Size(163, 22);
+            this.Copiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.Copiar.Size = new System.Drawing.Size(203, 22);
             this.Copiar.Text = "Copiar";
+            this.Copiar.Click += new System.EventHandler(this.Copiar_Click);
             // 
             // Cortar
             // 
             this.Cortar.Name = "Cortar";
-            this.Cortar.Size = new System.Drawing.Size(163, 22);
+            this.Cortar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.Cortar.Size = new System.Drawing.Size(203, 22);
             this.Cortar.Text = "Cortar";
+            this.Cortar.Click += new System.EventHandler(this.Cortar_Click);
             // 
             // Pegar
             // 
             this.Pegar.Name = "Pegar";
-            this.Pegar.Size = new System.Drawing.Size(163, 22);
+            this.Pegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.Pegar.Size = new System.Drawing.Size(203, 22);
             this.Pegar.Text = "Pegar";
+            this.Pegar.Click += new System.EventHandler(this.Pegar_Click);
             // 
             // seleccionarTodo
             // 
             this.seleccionarTodo.Name = "seleccionarTodo";
-            this.seleccionarTodo.Size = new System.Drawing.Size(163, 22);
+            this.seleccionarTodo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.seleccionarTodo.Size = new System.Drawing.Size(203, 22);
             this.seleccionarTodo.Text = "Seleccionar Todo";
+            this.seleccionarTodo.Click += new System.EventHandler(this.seleccionarTodo_Click);
             // 
             // eliminarTodo
             // 
             this.eliminarTodo.Name = "eliminarTodo";
-            this.eliminarTodo.Size = new System.Drawing.Size(163, 22);
+            this.eliminarTodo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
+            this.eliminarTodo.Size = new System.Drawing.Size(203, 22);
             this.eliminarTodo.Text = "Eliminar todo";
+            this.eliminarTodo.Click += new System.EventHandler(this.eliminarTodo_Click);
             // 
             // color
             // 
             this.color.Name = "color";
             this.color.Size = new System.Drawing.Size(48, 20);
             this.color.Text = "Color";
+            this.color.Click += new System.EventHandler(this.color_Click);
             // 
             // formato
             // 
             this.formato.Name = "formato";
             this.formato.Size = new System.Drawing.Size(67, 20);
             this.formato.Text = "Formato ";
+            this.formato.Click += new System.EventHandler(this.formato_Click);
             // 
             // richTextBox1
             // 
@@ -170,13 +199,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(618, 401);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
-            // 
-            // nuevo
-            // 
-            this.nuevo.Name = "nuevo";
-            this.nuevo.Size = new System.Drawing.Size(180, 22);
-            this.nuevo.Text = "nuevo";
-            this.nuevo.Click += new System.EventHandler(this.nuevo_Click);
             // 
             // Form1
             // 
@@ -214,6 +236,8 @@
         private System.Windows.Forms.ToolStripMenuItem formato;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ToolStripMenuItem nuevo;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 
